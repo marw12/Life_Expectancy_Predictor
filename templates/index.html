@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+    
+{% block content %}
+
+    <form action="{{ url_for('predict') }}" method="POST">
+    
+     <div class="form-group col-md-4" style="padding: 20px 30px; margin: 0 auto;">
+          <label for="inputStatus" style="color:white">Country Status</label>
+          <select name="inputStatus" id="inputStatus" class="form-control">
+            <option>Developed</option>
+             <option>Developing</option>
+          </select>
+        </div>
+    
+    <div class="form-row" style="">
+        
+    <div style="position: relative; padding: 20px 40px; margin: 0 auto;">
+        <p for="inputMortality" style="color:white;">Adult Mortality Rate /1000 Population:</p>
+        <span id="rangeValue" style="top: 63px;">0</span>
+        <input name="inputMortality" class="range" type="range" min="0" max="800" value="0" step="1" onmousemove="rangeSlider(this.value)" onChange="rangeSlider(this.value)">
+    </div>
+    
+    <div style="position: relative; padding: 20px 150px; margin: 0 auto;">
+        <p for="inputInfantDeath" style="color:white;">Number of Infant Deaths /1000 Population:</p>
+        <span id="rangeValue1" style="top: 63px">0</span>
+        <input name="inputInfantDeath" class="range" type="range" min="0" max="1800" value="0" step="1" onmousemove="rangeSlider1(this.value)" onChange="rangeSlider1(this.value)">
+    </div> 
+    
+    </div>
+    
+    <div class="form-row">
+        
+    <div style="position: relative; padding: 20px 40px; margin: 0 auto;">
+        <p for="inputAlcohol" style="color:white;">Alcohol Consumption per Person (Litres):</p>
+        <span id="rangeValue2" style="top: 63px;">0</span>
+        <input name="inputAlcohol" class="range" type="range" min="0.00" max="25.00" value="0" step="0.01" onmousemove="rangeSlider2(this.value)" onChange="rangeSlider2(this.value)">
+    </div>
+    
+    <div style="position: relative; padding: 20px 150px; margin: 0 auto;">
+        <p for="inputHepatitis" style="color:white;">Hepatitis B Coverage Among 1 year-olds (%)</p>
+        <span id="rangeValue3" style="top: 63px">0</span>
+        <input name="inputHepatitis" class="range" type="range" min="0" max="100" value="0" step="1" onmousemove="rangeSlider3(this.value)" onChange="rangeSlider3(this.value)">
+    </div> 
+    
+    </div>
+    
+    <div class="form-row">
+        
+    <div style="position: relative; padding: 20px 40px; margin: 0 auto;">
+        <p for="inputBMI" style="color:white;">Average BMI For The Entire Population:</p>
+        <span id="rangeValue4" style="top: 63px;">0</span>
+        <input name="inputBMI" class="range" type="range" min="0" max="80" value="0" step="0.1" onmousemove="rangeSlider4(this.value)" onChange="rangeSlider4(this.value)">
+    </div>
+    
+    <div style="position: relative; padding: 20px 150px; margin: 0 auto;">
+        <p for="inputUnder5Deaths" style="color:white;">Number of Under Five Deaths /1000 Population:</p>
+        <span id="rangeValue5" style="top: 63px">0</span>
+        <input name="inputUnder5Deaths" class="range" type="range" min="0" max="3000" value="0" step="1" onmousemove="rangeSlider5(this.value)" onChange="rangeSlider5(this.value)">
+    </div> 
+    
+    </div>
+    
+    <div class="form-row">
+        
+    <div style="position: relative; padding: 20px 40px; margin: 0 auto;">
+        <p for="inputPolio" style="color:white;">Polio Coverage Among 1 year-olds (%):</p>
+        <span id="rangeValue6" style="top: 63px;">0</span>
+        <input name="inputPolio" class="range" type="range" min="0" max="100" value="0" step="1" onmousemove="rangeSlider6(this.value)" onChange="rangeSlider6(this.value)">
+    </div>
+    
+    <div style="position: relative; padding: 20px 150px; margin: 0 auto;">
+        <p for="inputTotalExpenditure" style="color:white;">Health Expenditure of Total Governmnet Expenditure (%):</p>
+        <span id="rangeValue7" style="top: 63px">0</span>
+        <input name="inputTotalExpenditure" class="range" type="range" min="0" max="100" value="0" step="0.01" onmousemove="rangeSlider7(this.value)" onChange="rangeSlider7(this.value)">
+    </div> 
+    
+    </div>
+    
+    <div class="form-row">
+        
+    <div style="position: relative; padding: 20px 40px; margin: 0 auto;">
+        <p for="inputDiptheria" style="color:white;">Diptheria Coverage Among 1 year-olds (%):</p>
+        <span id="rangeValue8" style="top: 63px;">0</span>
+        <input name="inputDiptheria" class="range" type="range" min="0" max="100" value="0" step="0.1" onmousemove="rangeSlider8(this.value)" onChange="rangeSlider8(this.value)">
+    </div>
+    
+    <div style="position: relative; padding: 20px 150px; margin: 0 auto;">
+        <p for="inputAIDS" style="color:white;">HIV/AIDS Deaths per 1000 Live Births (0-4 years):</p>
+        <span id="rangeValue9" style="top: 63px">0</span>
+        <input name="inputAIDS" class="range" type="range" min="0" max="100" value="0" step="0.1" onmousemove="rangeSlider9(this.value)" onChange="rangeSlider9(this.value)">
+    </div> 
+    
+    </div>
+    
+    <div class="form-row">
+        
+    <div style="position: relative; padding: 20px 40px; margin: 0 auto;">
+        <p for="inputThinness19" style="color:white;">Thinness Among 1-19 year-olds (%):</p>
+        <span id="rangeValue10" style="top: 63px;">0</span>
+        <input name="inputThinness19" class="range" type="range" min="0" max="100" value="0" step="0.1" onmousemove="rangeSlider10(this.value)" onChange="rangeSlider10(this.value)">
+    </div>
+    
+    <div style="position: relative; padding: 20px 150px; margin: 0 auto;">
+        <p for="inputThinness9" style="color:white;">Thinness Among 5-9 year-olds (%):</p>
+        <span id="rangeValue11" style="top: 63px">0</span>
+        <input name="inputThinness9" class="range" type="range" min="0" max="100" value="0" step="0.1" onmousemove="rangeSlider11(this.value)" onChange="rangeSlider11(this.value)">
+    </div> 
+    
+    </div>
+    
+    <div class="form-row">
+        
+    <div style="position: relative; padding: 20px 40px; margin: 0 auto;">
+        <p for="inputIncome" style="color:white;">Human Development Index In Terms of Income:</p>
+        <span id="rangeValue12" style="top: 63px;">0</span>
+        <input name="inputIncome" class="range" type="range" min="0" max="1" value="0" step="0.001" onmousemove="rangeSlider12(this.value)" onChange="rangeSlider12(this.value)">
+    </div>
+    
+    <div style="position: relative; padding: 20px 150px; margin: 0 auto;">
+        <p for="inputSchooling" style="color:white;">Number of Years of Schooling:</p>
+        <span id="rangeValue13" style="top: 63px">0</span>
+        <input name="inputSchooling" class="range" type="range" min="0" max="50" value="0" step="0.1" onmousemove="rangeSlider13(this.value)" onChange="rangeSlider13(this.value)">
+    </div> 
+    
+    </div>
+    
+    <div class="form-group col-md-4" style=" position: relative; padding: 30px; margin: 0 auto;">
+    <button type="submit" class="btn btn-primary btn-lg btn-block">Predict</button>
+    </div>
+    
+    </form>
+    
+    <div style="color:white; text-align: center; position: relative; padding: 40px">
+       <h2>{{ prediction_text }}</h2>  
+    </div>
+    
+    <br>
+    <br>
+    
+{% endblock %}
