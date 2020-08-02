@@ -3,7 +3,6 @@ pandas
 gunicorn
 numpy
 tensorflow
-pickle
 scikit-learn
 matplotlib
 pandas
