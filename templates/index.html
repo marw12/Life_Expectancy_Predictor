@@ -2,9 +2,17 @@
     
 {% block content %}
 
+<div style="text-align: center; margin: 55px; color:white;">
+<h1>WELCOME</h1>
+<p>Slide the bars to select values then hit PREDICT to get the predicted life expectancy! All values are Annual.</p>
+
+
+</div>
+
+
     <form action="{{ url_for('predict') }}" method="POST">
     
-     <div class="form-group col-md-4" style="padding: 20px 30px; margin: 0 auto;">
+     <div class="form-group col-md-4" style="padding: 30px 30px; margin: 0 auto;">
           <label for="inputStatus" style="color:white">Country Status</label>
           <select name="inputStatus" id="inputStatus" class="form-control">
             <option>Developed</option>
