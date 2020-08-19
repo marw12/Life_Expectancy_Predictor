@@ -1,5 +1,7 @@
 # Life Expectancy Predictor
 
+![alt text](https://github.com/marw12/Life_Expectancy_Predictor/blob/master/homeScreen.png?raw=true)
+
 There have been many studies undertaken in the past which detail factors that affect life expectancy using demographic variables, income composition and mortality rates; it was found that what was lacking is the effect of immunization and HDI, these aspects were not taken into account. Past research conducted on multiple linear regression was based on a dataset of only one year for all countries. This was not as conclusive or intricate as this analysis calls for, instead, I formulated a multiple linear regression model to encompass all components, including immunization, mortality, economic, social and other health related factors, from a period of 2000-2015, in all countries. This will help countries predict areas of improvement to ameliorate the life expectancy of its population.
 
 The dataset was obtained from kaggle.com, found on the World Health Organisation’s (WHO) repository website, its corresponding economic data was collected from the United Nations website. After considering all factors in the dataset, the following multiple linear regression equation was produced:
