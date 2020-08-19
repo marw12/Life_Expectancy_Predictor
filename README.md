@@ -1,5 +1,7 @@
 # Life Expectancy Predictor
 
+Link: https://life-expectancy-pred.herokuapp.com/
+
 ![alt text](https://github.com/marw12/Life_Expectancy_Predictor/blob/master/homeScreen.png?raw=true)
 
 # About
